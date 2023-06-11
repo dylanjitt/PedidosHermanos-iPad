@@ -5,7 +5,7 @@ import {AntDesign} from '@expo/vector-icons';
 
 const FoodList = (props) => {
 
-    let [Listt,setListt]=useState(props.selectList)
+    const [Listt,setListt]=useState(props.selectList)
     return(
         <FlatList
         //nestedScrollEnabled

@@ -12,6 +12,8 @@ import CreateAccount from "./createAcc";
 import MainMenu from "./mainMenu";
 import AppAdressPay from "./adressPay";
 
+import RateUS from "./rateUs";
+
 const Stack = createStackNavigator();
 
 function App (){
@@ -35,6 +37,10 @@ function App (){
             <Stack.Screen
               name="AdressPay"
               component={AppAdressPay}
+              />
+            <Stack.Screen
+              name="RateUs"
+              component={RateUS}
               />
           </Stack.Navigator>
         </NavigationContainer>

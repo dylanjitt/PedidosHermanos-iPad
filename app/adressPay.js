@@ -10,8 +10,8 @@ export default function AppAdressPay ({navigation}) {
     const [monto, setMonto]=useState(300)
     const [cambio, setCambio]=useState(monto-precio)
 
-    const gotoLogin = () => {
-        navigation.navigate('Login')
+    const gotoCountDown = () => {
+        navigation.navigate('RateUs')
     }
   
     return(
@@ -81,7 +81,7 @@ export default function AppAdressPay ({navigation}) {
             style={{
               width:444, height:75, backgroundColor:"#fdaf01", borderRadius:15, marginTop:140, marginBottom:35, justifyContent:"center", alignItems:"center"
             }}
-            onPress={gotoLogin}>
+            onPress={gotoCountDown}>
               <Text style={stylesAdressPay.pedir}>Confirmar Pedido</Text>
             </TouchableOpacity>
   
