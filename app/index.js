@@ -24,7 +24,7 @@ function App() {
       >
         <Stack.Screen
           name="Login"
-          component={OnTheGo}
+          component={Login}
         />
         <Stack.Screen
           name="CreateAcc"
