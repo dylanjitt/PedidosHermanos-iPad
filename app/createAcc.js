@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Button, SectionList, Image, TouchableOpacity,TextInput,StatusBar,FlatList, RefreshControl, ScrollView, Pressable, } from "react-native";
+import { StyleSheet, Text, View, Button, SectionList, Image, TouchableOpacity,TextInput,StatusBar,FlatList, RefreshControl, ScrollView, Pressable, Linking, } from "react-native";
 import React, { useState } from 'react';
 import { Link } from "expo-router";
 
@@ -110,10 +110,16 @@ export default function CreateAccount ({navigation}) {
         <View style={{
           alignItems:"center",justifyContent:"center",paddingBottom:5
         }}>
-          <View style={{flexDirection:"row"}}>
-          <Text style={{fontSize:18}}>Al darle a "registrarse" aceptas nuestros </Text>
-          <Text style={{fontSize:18,color:"#fff",fontWeight:"700"}}>Términos y condiciones </Text>
-          </View>
+          
+          <Text style={stylesCreateaccount.toreg}>Al darle a "registrarse" aceptas nuestros{' '} 
+            <Text 
+            style={stylesCreateaccount.termsCond}
+            onPress={()=>{Linking.openURL('https://www.youtube.com/watch?v=dQw4w9WgXcQ')}}
+            >Términos y condiciones 
+            </Text>
+          </Text>
+          
+          
   
           <TouchableOpacity 
           style={stylesCreateaccount.button}
@@ -190,5 +196,11 @@ export default function CreateAccount ({navigation}) {
       marginBottom:30,
       fontSize:18,
       paddingLeft:15, 
-    }
+    },
+    toreg:{
+      fontSize:18
+    },
+    termsCond:{fontSize:18,color:"#fff",fontWeight:"700"}
+
+    
   });
