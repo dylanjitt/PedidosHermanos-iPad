@@ -13,10 +13,14 @@ export default function OnTheGo({ navigation }) {
 
     return (
         <View style={stylesOTG.body}>
+            <StatusBar barStyle={'light-content'} />
             <Text style={stylesOTG.title}>Tiempo de Entrega</Text>
             {/* insert coundtdown here  */}
             <View style={{ margin: 50 }}>
-                <CountDown />
+                <CountDown 
+                time={10}
+                func={gotoRate}
+                />
             </View>
 
 
@@ -43,7 +47,8 @@ const stylesOTG = StyleSheet.create({
         fontSize: 48,
         color: '#fff',
         fontWeight: 'bold',
-        fontStyle: 'italic'
+        fontStyle: 'italic',
+        marginTop:50
     },
     subtitle: {
         fontSize: 28,

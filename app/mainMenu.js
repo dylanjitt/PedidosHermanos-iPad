@@ -65,8 +65,8 @@ export default function MainMenu({ navigation }) {
   }
 
   return (
-    <TouchableWithoutFeedback
-      onPress={hideKeyboard}>
+    
+      
       <View style={stylesMain.main2}>
         <StatusBar barStyle={'light-content'} />
         {/* ManualHeader */}
@@ -185,7 +185,7 @@ export default function MainMenu({ navigation }) {
         </View>
 
       </View>
-    </TouchableWithoutFeedback>
+    
 
   )
 }
