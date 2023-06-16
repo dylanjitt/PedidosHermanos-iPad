@@ -6,26 +6,114 @@ import { AntDesign } from '@expo/vector-icons';
 
 export default function AppAdressPay({ navigation }) {
 
-  const [precio, setPrecio] = useState(260)
-  const [monto, setMonto] = useState(0)
-  const [cambio, setCambio] = useState(0)
-  const [dir, setDir] = useState('')
+  const [precioDefault,setPrecioDefault]=useState(200);
+  const [precio, setPrecio] = useState(precioDefault);
+  const [monto, setMonto] = useState(0);
+  const [cambio, setCambio] = useState(0);
+  const [explicitAddress, setExplicitAddress] = useState('');
 
+  const [zoneText, setZoneText]=useState('Seleccione Zona:');
   const [imageDir, setImageDir] = useState(require('../assets/directions/default.jpg'));
+  const [time, setTime]=useState(0);
 
   const gotoCountDown = () => {
     navigation.navigate('OnTheGo')
   }
 
-  const updateChange = (val) => {
+  const obrajes = ()=>{
+    setImageDir(require('../assets/directions/obrajes.jpg'))
+    setZoneText('OBRAJES')
+    setPrecio(precioDefault+10)
+    setTime(900)
+  }
 
+  const calacoto = ()=>{
+    setImageDir(require('../assets/directions/calacoto.jpg'))
+    setZoneText('CALACOTO')
+    setPrecio(precioDefault+15)
+    setTime(1800)
+  }
+
+  const achumani = ()=>{
+    setImageDir(require('../assets/directions/achumani.jpg'))
+    setZoneText('ACHUMANI')
+    setPrecio(precioDefault+20)
+    setTime(3600)
+  }
+
+  const losPinos = ()=>{
+    setImageDir(require('../assets/directions/los_pinos.jpg'))
+    setZoneText('LOS PINOS')
+    setPrecio(precioDefault+12)
+    setTime(2700)
+  }
+
+  const irpavi = ()=>{
+    setImageDir(require('../assets/directions/irpavi.jpg'))
+    setZoneText('IRPAVI')
+    setPrecio(precioDefault+20)
+    setTime(3600)
+  }
+
+  const miraflores = ()=>{
+    setImageDir(require('../assets/directions/miraflores.jpg'))
+    setZoneText('MIRAFLORES')
+    setPrecio(precioDefault+15)
+    setTime(2400)
+  }
+
+  const sopocachi = ()=>{
+    setImageDir(require('../assets/directions/sopocachi.jpg'))
+    setZoneText('SOPOCACHI')
+    setPrecio(precioDefault+12)
+    setTime(900)
+  }
+
+  const prado = ()=>{
+    setImageDir(require('../assets/directions/prado.png'))
+    setZoneText('PRADO')
+    setPrecio(precioDefault+10)
+    setTime(1800)
+  }
+
+  const perez = ()=>{
+    setImageDir(require('../assets/directions/perez.jpg'))
+    setZoneText('PEREZ')
+    setPrecio(precioDefault+15)
+    setTime(2400)
+  }
+
+  const sanPedro = ()=>{
+    setImageDir(require('../assets/directions/san_pedro.jpg'))
+    setZoneText('SAN PEDRO')
+    setPrecio(precioDefault+15)
+    setTime(2700)
+  }
+
+  const sanAntonio = ()=>{
+    setImageDir(require('../assets/directions/san_antonio.jpg'))
+    setZoneText('VILLA SAN ANTONIO')
+    setPrecio(precioDefault+18)
+    setTime(3600)
+  }
+
+  const tembladerani = ()=>{
+    setImageDir(require('../assets/directions/tembladerani.png'))
+    setZoneText('TEMBLADERANI')
+    setPrecio(precioDefault+20)
+    setTime(3600)
+  }
+
+
+
+
+  const updateChange = (val) => {
     setMonto(val)
     if (val < precio) {
       setCambio(0)
     } else {
       setCambio(val - precio)
     }
-
   }
 
   function hideKeyboard() {
@@ -49,17 +137,24 @@ export default function AppAdressPay({ navigation }) {
           <TextInput style={stylesAdressPay.insDir}
             placeholder='"Barrio, Nombre y Nro. de Calle - Número de casa"'
             placeholderTextColor={'#c1c1c1'}
-            onChangeText={(value) => setDir(value)} />
+            onChangeText={(value) => setExplicitAddress(value)} />
 
           <TouchableOpacity
             style={stylesAdressPay.selectZone}
+            //inserte aqui la función principal para el dropdown
+            onPress={tembladerani}
           >
-            <Text style={stylesAdressPay.subtitle2}>Seleccione Zona:</Text>
+            <Text style={stylesAdressPay.subtitle2}>{zoneText}</Text>
           </TouchableOpacity>
 
           <Image
             style={stylesAdressPay.imageContainer}
             source={imageDir} />
+
+          <Text
+            style={stylesAdressPay.disclaimer}>
+              El precio final incluye el costo del envio, el cual puede variar dependiendo la zona seleccionada.
+            </Text>
 
 
         </View>
@@ -109,7 +204,7 @@ export default function AppAdressPay({ navigation }) {
               flexDirection: "row", justifyContent: "center"
             }}>
               <View style={{
-                backgroundColor: "#594b4b", width: 184, height: 79, borderRadius: 10, justifyContent: "center", alignItems: "center", marginLeft: 70, marginBottom: 20, opacity: 0.43
+                backgroundColor: "#594b4b", width: 184, height: 79, borderRadius: 10, justifyContent: "center", alignItems: "center", marginLeft: 70, marginBottom: 20, 
               }}>
                 <Text style={stylesAdressPay.subtitle4}>{cambio}</Text>
               </View>
@@ -159,7 +254,7 @@ const stylesAdressPay = StyleSheet.create({
     color: "#FDAF01"
   },
   montoInput: {
-    backgroundColor: "#594b4b",
+    backgroundColor: "#594b4b90",
     width: 184,
     height: 79,
     borderRadius: 10,
@@ -171,7 +266,9 @@ const stylesAdressPay = StyleSheet.create({
     padding: 20,
     textAlign: 'center',
     fontWeight: "bold",
-    color: "#fff"
+    color: "#fff",
+    borderWidth:1,
+    borderColor:'#c1c1c1'
   },
   subtitle2: {
     fontSize: 27,
@@ -206,7 +303,8 @@ const stylesAdressPay = StyleSheet.create({
     width: 628,
     height: 391,
     borderRadius: 8,
-    margin: 35
+    margin: 35,
+    backgroundColor:'#000'
   },
   selectZone: {
     backgroundColor: '#594b4b',
@@ -217,6 +315,12 @@ const stylesAdressPay = StyleSheet.create({
     marginLeft: 40,
 
     alignItems: 'center'
+  },
+  disclaimer:{
+    fontSize:18,
+    color:'#c1c1c1',
+    fontWeight:400,
+    paddingLeft:40
   },
   hintText: {
     fontSize: 20,

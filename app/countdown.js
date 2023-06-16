@@ -10,7 +10,7 @@ export default function CountDown(props) {
         const seconds = time % 60
 
         
-        return `${minutes}:${seconds}`
+        return `${minutes.toString().padStart(2,"0")}:${seconds.toString().padStart(2,"0")}`
     }
 
     return (
