@@ -7,12 +7,12 @@ import { AntDesign } from '@expo/vector-icons';
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import Login from "./Login";
-import CreateAccount from "./createAcc";
-import MainMenu from "./mainMenu";
-import AppAdressPay from "./adressPay";
-import OnTheGo from "./onTheGo";
-import RateUS from "./rateUs";
+import Login from "./screens/Login";
+import CreateAccount from "./screens/createAcc";
+import MainMenu from "./screens/mainMenu";
+import AppAdressPay from "./screens/adressPay";
+import OnTheGo from "./screens/onTheGo";
+import RateUS from "./screens/rateUs";
 
 const Stack = createStackNavigator();
 

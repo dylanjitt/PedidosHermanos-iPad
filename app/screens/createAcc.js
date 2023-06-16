@@ -22,7 +22,7 @@ export default function CreateAccount ({navigation}) {
           flexDirection:"row",marginTop:40
         }}>
           <Image style={stylesCreateaccount.imageContainer}
-          source={require('../assets/UIelements/pedidos_hermanos_logo.png')}
+          source={require('../../assets/UIelements/pedidos_hermanos_logo.png')}
           />
   
           <View style={{

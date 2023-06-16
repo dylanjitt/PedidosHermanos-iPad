@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, Button, SectionList, Image, TouchableOpacity, T
 import React, { useState } from 'react';
 import { Link } from "expo-router";
 
-import CountDown from "./countdown";
+import CountDown from "../utilities/countdown";
 
 
 export default function OnTheGo({ navigation }) {
@@ -18,7 +18,7 @@ export default function OnTheGo({ navigation }) {
             {/* insert coundtdown here  */}
             <View style={{ margin: 50 }}>
                 <CountDown 
-                time={10}
+                time={100}
                 func={gotoRate}
                 />
             </View>

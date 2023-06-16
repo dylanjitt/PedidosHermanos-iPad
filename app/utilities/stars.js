@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, Button, SectionList, Image, TouchableOpacity, T
 import React, { useState } from 'react';
 import { FontAwesome } from '@expo/vector-icons';
 
-import Star from "./buttons/star";
+import Star from "../buttons/star";
 
 export default function Stars(){
 

@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, Keyboard, TouchableOpacity, TextInput, StatusBa
 import React, { useState } from 'react';
 import { FontAwesome5 } from '@expo/vector-icons';
 
-import Stars from "./stars";
+import Stars from "../utilities/stars";
 
 export default function RateUS({ navigation }) {
 

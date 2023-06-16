@@ -13,99 +13,93 @@ export default function AppAdressPay({ navigation }) {
   const [explicitAddress, setExplicitAddress] = useState('');
 
   const [zoneText, setZoneText]=useState('Seleccione Zona:');
-  const [imageDir, setImageDir] = useState(require('../assets/directions/default.jpg'));
+  const [imageDir, setImageDir] = useState(require('../../assets/directions/default.jpg'));
   const [time, setTime]=useState(0);
 
-  const gotoCountDown = () => {
-    navigation.navigate('OnTheGo')
-  }
 
   const obrajes = ()=>{
-    setImageDir(require('../assets/directions/obrajes.jpg'))
+    setImageDir(require('../../assets/directions/obrajes.jpg'))
     setZoneText('OBRAJES')
     setPrecio(precioDefault+10)
     setTime(900)
   }
 
   const calacoto = ()=>{
-    setImageDir(require('../assets/directions/calacoto.jpg'))
+    setImageDir(require('../../assets/directions/calacoto.jpg'))
     setZoneText('CALACOTO')
     setPrecio(precioDefault+15)
     setTime(1800)
   }
 
   const achumani = ()=>{
-    setImageDir(require('../assets/directions/achumani.jpg'))
+    setImageDir(require('../../assets/directions/achumani.jpg'))
     setZoneText('ACHUMANI')
     setPrecio(precioDefault+20)
     setTime(3600)
   }
 
   const losPinos = ()=>{
-    setImageDir(require('../assets/directions/los_pinos.jpg'))
+    setImageDir(require('../../assets/directions/los_pinos.jpg'))
     setZoneText('LOS PINOS')
     setPrecio(precioDefault+12)
     setTime(2700)
   }
 
   const irpavi = ()=>{
-    setImageDir(require('../assets/directions/irpavi.jpg'))
+    setImageDir(require('../../assets/directions/irpavi.jpg'))
     setZoneText('IRPAVI')
     setPrecio(precioDefault+20)
     setTime(3600)
   }
 
   const miraflores = ()=>{
-    setImageDir(require('../assets/directions/miraflores.jpg'))
+    setImageDir(require('../../assets/directions/miraflores.jpg'))
     setZoneText('MIRAFLORES')
     setPrecio(precioDefault+15)
     setTime(2400)
   }
 
   const sopocachi = ()=>{
-    setImageDir(require('../assets/directions/sopocachi.jpg'))
+    setImageDir(require('../../assets/directions/sopocachi.jpg'))
     setZoneText('SOPOCACHI')
     setPrecio(precioDefault+12)
     setTime(900)
   }
 
   const prado = ()=>{
-    setImageDir(require('../assets/directions/prado.png'))
+    setImageDir(require('../../assets/directions/prado.png'))
     setZoneText('PRADO')
     setPrecio(precioDefault+10)
     setTime(1800)
   }
 
   const perez = ()=>{
-    setImageDir(require('../assets/directions/perez.jpg'))
+    setImageDir(require('../../assets/directions/perez.jpg'))
     setZoneText('PEREZ')
     setPrecio(precioDefault+15)
     setTime(2400)
   }
 
   const sanPedro = ()=>{
-    setImageDir(require('../assets/directions/san_pedro.jpg'))
+    setImageDir(require('../../assets/directions/san_pedro.jpg'))
     setZoneText('SAN PEDRO')
     setPrecio(precioDefault+15)
     setTime(2700)
   }
 
   const sanAntonio = ()=>{
-    setImageDir(require('../assets/directions/san_antonio.jpg'))
+    setImageDir(require('../../assets/directions/san_antonio.jpg'))
     setZoneText('VILLA SAN ANTONIO')
     setPrecio(precioDefault+18)
     setTime(3600)
   }
 
   const tembladerani = ()=>{
-    setImageDir(require('../assets/directions/tembladerani.png'))
+    setImageDir(require('../../assets/directions/tembladerani.png'))
     setZoneText('TEMBLADERANI')
     setPrecio(precioDefault+20)
     setTime(3600)
   }
-
-
-
 
   const updateChange = (val) => {
     setMonto(val)
@@ -118,6 +112,10 @@ export default function AppAdressPay({ navigation }) {
 
   function hideKeyboard() {
     Keyboard.dismiss();
+  }
+
+  const gotoCountDown = () => {
+    navigation.navigate('OnTheGo')
   }
 
   return (

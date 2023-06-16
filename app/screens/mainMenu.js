@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { AntDesign } from '@expo/vector-icons';
 
-import FoodList from "./FoodList";
+import FoodList from "../utilities/FoodList";
 
 export default function MainMenu({ navigation }) {
 
@@ -35,27 +35,25 @@ export default function MainMenu({ navigation }) {
 
 
   const [foods, setFoods] = useState([
-    { name: 'Hamburguesa', price: 25, image: require('../assets/foodsDrinks/hamburguesa.jpeg'), cant: 0 },
-    { name: 'Pollos Hermanos', price: 20, image: require('../assets/foodsDrinks/pollo_frito.jpeg'), cant: 0 },
-    { name: 'Pizza N.Y.', price: 50, image: require('../assets/foodsDrinks/pizza.jpeg'), cant: 0 },
-
-
-    { name: 'Spaghetti', price: 45, image: require('../assets/foodsDrinks/spaghetti.png'), cant: 0 },
-    { name: 'Hot Dog', price: 8, image: require('../assets/foodsDrinks/hot_dog.png'), cant: 0 },
-    { name: 'Tacos', price: 30, image: require('../assets/foodsDrinks/tacos.png'), cant: 0 },
-    { name: 'Ensalada', price: 30, image: require('../assets/foodsDrinks/ensalada.jpg'), cant: 0 },
-    { name: 'Club Sandwich', price: 40, image: require('../assets/foodsDrinks/club_sandwich.jpeg'), cant: 0 },
+    { name: 'Hamburguesa', price: 25, image: require('../../assets/foodsDrinks/hamburguesa.jpeg'), cant: 0 },
+    { name: 'Pollos Hermanos', price: 20, image: require('../../assets/foodsDrinks/pollo_frito.jpeg'), cant: 0 },
+    { name: 'Pizza N.Y.', price: 50, image: require('../../assets/foodsDrinks/pizza.jpeg'), cant: 0 },
+    { name: 'Spaghetti', price: 45, image: require('../../assets/foodsDrinks/spaghetti.png'), cant: 0 },
+    { name: 'Hot Dog', price: 8, image: require('../../assets/foodsDrinks/hot_dog.png'), cant: 0 },
+    { name: 'Tacos', price: 30, image: require('../../assets/foodsDrinks/tacos.png'), cant: 0 },
+    { name: 'Ensalada', price: 30, image: require('../../assets/foodsDrinks/ensalada.jpg'), cant: 0 },
+    { name: 'Club Sandwich', price: 40, image: require('../../assets/foodsDrinks/club_sandwich.jpeg'), cant: 0 },
 
   ])
 
   const [drinks, setDrinks] = useState([
-    { name: 'Coca Cola 2Lt', price: 14, image: require('../assets/foodsDrinks/coca_cola_2lt.jpg'), cant: 0 },
-    { name: 'Coca Cola \npersonal', price: 5, image: require('../assets/foodsDrinks/coca_cola_personal.jpg'), cant: 0 },
-    { name: 'Fanta Naranja \npersonal', price: 5, image: require('../assets/foodsDrinks/fanta_personal.jpg'), cant: 0 },
-    { name: 'Fanta Mandarina \npersonal', price: 5, image: require('../assets/foodsDrinks/fanta_mandarina_personal.jpg'), cant: 0 },
-    { name: 'Fanta Papaya \npersonal', price: 5, image: require('../assets/foodsDrinks/fanta_papaya_personal.jpg'), cant: 0 },
-    { name: 'Fanta Guaraná \npersonal', price: 5, image: require('../assets/foodsDrinks/fanta_guarana_personal.jpg'), cant: 0 },
-    { name: 'Sprite \npersonal', price: 5, image: require('../assets/foodsDrinks/sprite_personal.jpg'), cant: 0 }
+    { name: 'Coca Cola 2Lt', price: 14, image: require('../../assets/foodsDrinks/coca_cola_2lt.jpg'), cant: 0 },
+    { name: 'Coca Cola \npersonal', price: 5, image: require('../../assets/foodsDrinks/coca_cola_personal.jpg'), cant: 0 },
+    { name: 'Fanta Naranja \npersonal', price: 5, image: require('../../assets/foodsDrinks/fanta_personal.jpg'), cant: 0 },
+    { name: 'Fanta Mandarina \npersonal', price: 5, image: require('../../assets/foodsDrinks/fanta_mandarina_personal.jpg'), cant: 0 },
+    { name: 'Fanta Papaya \npersonal', price: 5, image: require('../../assets/foodsDrinks/fanta_papaya_personal.jpg'), cant: 0 },
+    { name: 'Fanta Guaraná \npersonal', price: 5, image: require('../../assets/foodsDrinks/fanta_guarana_personal.jpg'), cant: 0 },
+    { name: 'Sprite \npersonal', price: 5, image: require('../../assets/foodsDrinks/sprite_personal.jpg'), cant: 0 }
   ])
 
   //const [textTotal, setTextTotal]=useState('total: 0')
@@ -92,7 +90,7 @@ export default function MainMenu({ navigation }) {
           <View style={{ flex: 3, alignItems: 'flex-end', justifyContent: 'center' }}>
             <Image
               style={{ width: 40, height: 40, marginRight: 20, borderColor: '#c1c1c1', borderWidth: 1, borderRadius: 100 }}
-              source={require('../assets/UIelements/pedidos_hermanos_logo.png')}
+              source={require('../../assets/UIelements/pedidos_hermanos_logo.png')}
             />
           </View>
 

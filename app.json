@@ -4,7 +4,15 @@
     "web": {
       "bundler": "metro"
     },
-    "name": "PedidosHermanosIpad",
-    "slug": "PedidosHermanosIpad"
+    "name": "Pedidos Hermanos ",
+    "slug": "PedidosHermanosIpad",
+    "icon": "./assets/UIelements/pedidos_hermanos_logo_app.jpg",
+    "orientation":"landscape",
+    "splash":{
+      "backgroundColor":"#252525"
+    },
+    "ios":{
+      "supportsTablet": true
+    }
   }
 }
