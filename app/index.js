@@ -24,7 +24,7 @@ function App() {
       >
         <Stack.Screen
           name="Login"
-          component={Login}
+          component={AppAdressPay}
         />
         <Stack.Screen
           name="CreateAcc"

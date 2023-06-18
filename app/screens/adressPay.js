@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { AntDesign } from '@expo/vector-icons';
+import DropDown from "../utilities/dropdown";
 
 export default function AppAdressPay({ navigation }) {
 
@@ -137,10 +138,19 @@ export default function AppAdressPay({ navigation }) {
             placeholderTextColor={'#c1c1c1'}
             onChangeText={(value) => setExplicitAddress(value)} />
 
+          {/* insert DropDown component Here! */}
+          <DropDown
+          f1={obrajes}
+          f2={calacoto}
+          f3={irpavi}
+          />
+
+
+
           <TouchableOpacity
             style={stylesAdressPay.selectZone}
             //inserte aqui la función principal para el dropdown
-            onPress={tembladerani}
+            onPress={obrajes}
           >
             <Text style={stylesAdressPay.subtitle2}>{zoneText}</Text>
           </TouchableOpacity>
@@ -211,7 +221,7 @@ export default function AppAdressPay({ navigation }) {
 
             <TouchableOpacity
               style={{
-                width: 444, height: 75, backgroundColor: "#fdaf01", borderRadius: 15, marginTop: 140, marginBottom: 35, justifyContent: "center", alignItems: "center"
+                width: 444, height: 75, backgroundColor: "#fdaf01", borderRadius: 15, marginTop: 125, marginBottom: 50, justifyContent: "center", alignItems: "center"
               }}
               onPress={gotoCountDown}>
               <Text style={stylesAdressPay.pedir}>Confirmar Pedido</Text>
