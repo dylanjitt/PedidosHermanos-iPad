@@ -10,9 +10,9 @@ function DropDown(props) {
     const [isFocus, setIsFocus] = useState(false);
 
     const data = [
-        { label: 'Item 1', value: 1 ,fun: props.f1},
-        { label: 'Item 2', value: 2 ,fun: props.f2},
-        { label: 'Item 3', value: 3 ,fun: props.f3},
+        { label: 'Item 1', value: 1 },
+        { label: 'Item 2', value: 2 },
+        { label: 'Item 3', value: 3 },
         
     ];
 
@@ -37,6 +37,8 @@ function DropDown(props) {
             props.f1
         }else if (val==2){
             props.f2
+        }else if (val==3){
+            props.f3
         }
     }
 
@@ -66,10 +68,10 @@ function DropDown(props) {
                     execute(item.value)
                     //setValue(item.value);
                     setIsFocus(false);
-                    execute
+                    //execute
                     
                 }}
-                onConfirmSelectItem={execute}
+                
                 itemTextStyle={styles.itemStyle}
                 containerStyle={styles.listItemStyle}
                 activeColor='#594b4b95'
