@@ -25,6 +25,7 @@ function App() {
         <Stack.Screen
           name="Login"
           component={Login}
+          initialParams={{userName:'',passwd:''}}
         />
         <Stack.Screen
           name="CreateAcc"

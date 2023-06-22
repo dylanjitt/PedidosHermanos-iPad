@@ -13,7 +13,7 @@ export default function CreateAccount({ navigation }) {
 
   const gotoLogin = () => {
     if (user!=='' && userName!=='' && email!=='' && password!=='' && age!==''){
-      navigation.navigate('Login')
+      navigation.navigate('Login',{userName:userName,passwd:password})
     }else{
       Alert.alert('ERROR DE CREACIÓN DE CUENTA','complete todas las casillas con los datos solicitados para continuar',[
         {text:"OK"}

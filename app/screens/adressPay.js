@@ -140,7 +140,7 @@ export default function AppAdressPay({ navigation }) {
 
           {/* insert DropDown component Here! */}
           <DropDown
-          f1={obrajes}
+          f1={()=>{obrajes}}
           f2={calacoto}
           f3={irpavi}
           />
