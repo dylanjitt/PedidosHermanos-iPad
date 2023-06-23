@@ -13,91 +13,91 @@ export default function AppAdressPay({ navigation }) {
   const [cambio, setCambio] = useState(0);
   const [explicitAddress, setExplicitAddress] = useState('');
 
-  const [zoneText, setZoneText]=useState('Seleccione Zona:');
+  const [zoneSelected, setZoneSelected]=useState(false);
   const [imageDir, setImageDir] = useState(require('../../assets/directions/default.jpg'));
   const [time, setTime]=useState(0);
 
 
   const obrajes = ()=>{
     setImageDir(require('../../assets/directions/obrajes.jpg'))
-    setZoneText('OBRAJES')
+    setZoneSelected(true)
     setPrecio(precioDefault+10)
     setTime(900)
   }
 
   const calacoto = ()=>{
     setImageDir(require('../../assets/directions/calacoto.jpg'))
-    setZoneText('CALACOTO')
+    setZoneSelected(true)
     setPrecio(precioDefault+15)
     setTime(1800)
   }
 
   const achumani = ()=>{
     setImageDir(require('../../assets/directions/achumani.jpg'))
-    setZoneText('ACHUMANI')
+    setZoneSelected(true)
     setPrecio(precioDefault+20)
     setTime(3600)
   }
 
   const losPinos = ()=>{
     setImageDir(require('../../assets/directions/los_pinos.jpg'))
-    setZoneText('LOS PINOS')
+    setZoneSelected(true)
     setPrecio(precioDefault+12)
     setTime(2700)
   }
 
   const irpavi = ()=>{
     setImageDir(require('../../assets/directions/irpavi.jpg'))
-    setZoneText('IRPAVI')
+    setZoneSelected(true)
     setPrecio(precioDefault+20)
     setTime(3600)
   }
 
   const miraflores = ()=>{
     setImageDir(require('../../assets/directions/miraflores.jpg'))
-    setZoneText('MIRAFLORES')
+    setZoneSelected(true)
     setPrecio(precioDefault+15)
     setTime(2400)
   }
 
   const sopocachi = ()=>{
     setImageDir(require('../../assets/directions/sopocachi.jpg'))
-    setZoneText('SOPOCACHI')
+    setZoneSelected(true)
     setPrecio(precioDefault+12)
     setTime(900)
   }
 
   const prado = ()=>{
     setImageDir(require('../../assets/directions/prado.png'))
-    setZoneText('PRADO')
+    setZoneSelected(true)
     setPrecio(precioDefault+10)
     setTime(1800)
   }
 
   const perez = ()=>{
     setImageDir(require('../../assets/directions/perez.jpg'))
-    setZoneText('PEREZ')
+    setZoneSelected(true)
     setPrecio(precioDefault+15)
     setTime(2400)
   }
 
   const sanPedro = ()=>{
     setImageDir(require('../../assets/directions/san_pedro.jpg'))
-    setZoneText('SAN PEDRO')
+    setZoneSelected(true)
     setPrecio(precioDefault+15)
     setTime(2700)
   }
 
   const sanAntonio = ()=>{
     setImageDir(require('../../assets/directions/san_antonio.jpg'))
-    setZoneText('VILLA SAN ANTONIO')
+    setZoneSelected(true)
     setPrecio(precioDefault+18)
     setTime(3600)
   }
 
   const tembladerani = ()=>{
     setImageDir(require('../../assets/directions/tembladerani.png'))
-    setZoneText('TEMBLADERANI')
+    setZoneSelected(true)
     setPrecio(precioDefault+20)
     setTime(3600)
   }
@@ -116,7 +116,7 @@ export default function AppAdressPay({ navigation }) {
   }
 
   const gotoCountDown = () => {
-    navigation.navigate('OnTheGo')
+    navigation.navigate('OnTheGo',{deliveryTime:time})
   }
 
   return (
@@ -140,20 +140,23 @@ export default function AppAdressPay({ navigation }) {
 
           {/* insert DropDown component Here! */}
           <DropDown
-          f1={()=>{obrajes}}
+          f1={obrajes}
           f2={calacoto}
-          f3={irpavi}
+          f3={achumani}
+          f4={losPinos}
+          f5={irpavi}
+          f6={miraflores}
+          f7={sopocachi}
+          f8={prado}
+          f9={perez}
+          f10={sanPedro}
+          f11={sanAntonio}
+          f12={tembladerani}
           />
 
 
 
-          <TouchableOpacity
-            style={stylesAdressPay.selectZone}
-            //inserte aqui la función principal para el dropdown
-            onPress={obrajes}
-          >
-            <Text style={stylesAdressPay.subtitle2}>{zoneText}</Text>
-          </TouchableOpacity>
+          
 
           <Image
             style={stylesAdressPay.imageContainer}
