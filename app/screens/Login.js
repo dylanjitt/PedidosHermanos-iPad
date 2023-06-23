@@ -1,33 +1,33 @@
 import { StyleSheet, Text, View, Button, SectionList, Image, TouchableOpacity, TextInput, StatusBar, FlatList, RefreshControl, ScrollView, Pressable, Keyboard, TouchableWithoutFeedback, Alert } from "react-native";
 import React, { useState } from 'react';
 
-export default function Login({ navigation,route }) {
-  
+export default function Login({ navigation, route }) {
 
-  const {userName, passwd}=route.params
+
+  const { userName, passwd } = route.params
 
   const [user, setUser] = useState('')
   const [password, setPassword] = useState('')
 
-  
+
 
   const goToMainMenu = () => {
-    if (user==userName && password==passwd){
+    if (user == userName && password == passwd) {
       navigation.navigate('MainMenu')
-    }else if (user!==userName && password!==passwd){
-      Alert.alert('ERROR DE INICIO DE SESIÓN','El usuario y/o la contraseña ingresados no son válidos, intente nuevamente.',[
-        {text:"OK"}
-      ])    
-    }else if (user!==userName){
-      Alert.alert('USUARIO INCORRECTO','El usuario ingresado no es válido, intente con otro.',[
-        {text:"OK"}
-      ])    
-    }else if (password!==passwd){
-      Alert.alert('CONTRASEÑA INCORRECTA','La contraseña ingresada no es válida, intente con otra.',[
-        {text:"OK"}
-      ])    
+    } else if (user !== userName && password !== passwd) {
+      Alert.alert('ERROR DE INICIO DE SESIÓN', 'El usuario y/o la contraseña ingresados no son válidos, intente nuevamente.', [
+        { text: "OK" }
+      ])
+    } else if (user !== userName) {
+      Alert.alert('USUARIO INCORRECTO', 'El usuario ingresado no es válido, intente con otro.', [
+        { text: "OK" }
+      ])
+    } else if (password !== passwd) {
+      Alert.alert('CONTRASEÑA INCORRECTA', 'La contraseña ingresada no es válida, intente con otra.', [
+        { text: "OK" }
+      ])
     }
-    
+
   }
 
   const goToCreateAcc = () => {
@@ -51,7 +51,7 @@ export default function Login({ navigation,route }) {
         />
         <Text style={stylesLogin.title}>Pedidos Hermanos</Text>
 
-        <Text style={{color:'#fff',}}>{userName}, {passwd}</Text>
+        <Text style={{ color: '#fff', }}>{userName}, {passwd}</Text>
         <TextInput
           style={stylesLogin.textbox}
           placeholder="email o nombre de usuario"

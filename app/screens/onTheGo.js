@@ -5,13 +5,13 @@ import { Link } from "expo-router";
 import CountDown from "../utilities/countdown";
 
 
-export default function OnTheGo({ navigation,route }) {
+export default function OnTheGo({ navigation, route }) {
 
     const gotoRate = () => {
         navigation.navigate('RateUs')
     }
 
-    const {deliveryTime}=route.params
+    const { deliveryTime } = route.params
 
     return (
         <View style={stylesOTG.body}>
@@ -19,9 +19,9 @@ export default function OnTheGo({ navigation,route }) {
             <Text style={stylesOTG.title}>Tiempo de Entrega</Text>
             {/* insert coundtdown here  */}
             <View style={{ margin: 50 }}>
-                <CountDown 
-                time={deliveryTime}
-                func={gotoRate}
+                <CountDown
+                    time={deliveryTime}
+                    func={gotoRate}
                 />
             </View>
 
@@ -50,7 +50,7 @@ const stylesOTG = StyleSheet.create({
         color: '#fff',
         fontWeight: 'bold',
         fontStyle: 'italic',
-        marginTop:50
+        marginTop: 50
     },
     subtitle: {
         fontSize: 28,

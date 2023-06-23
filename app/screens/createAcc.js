@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Button, SectionList, Image, TouchableOpacity, TextInput, StatusBar, FlatList, RefreshControl, ScrollView, Pressable, Linking, Keyboard, TouchableWithoutFeedback, Alert} from "react-native";
+import { StyleSheet, Text, View, Button, SectionList, Image, TouchableOpacity, TextInput, StatusBar, FlatList, RefreshControl, ScrollView, Pressable, Linking, Keyboard, TouchableWithoutFeedback, Alert } from "react-native";
 import React, { useState } from 'react';
 import { Link } from "expo-router";
 
@@ -12,14 +12,14 @@ export default function CreateAccount({ navigation }) {
 
 
   const gotoLogin = () => {
-    if (user!=='' && userName!=='' && email!=='' && password!=='' && age!==''){
-      navigation.navigate('Login',{userName:userName,passwd:password})
-    }else{
-      Alert.alert('ERROR DE CREACIÓN DE CUENTA','complete todas las casillas con los datos solicitados para continuar',[
-        {text:"OK"}
-      ]) 
+    if (user !== '' && userName !== '' && email !== '' && password !== '' && age !== '') {
+      navigation.navigate('Login', { userName: userName, passwd: password })
+    } else {
+      Alert.alert('ERROR DE CREACIÓN DE CUENTA', 'complete todas las casillas con los datos solicitados para continuar', [
+        { text: "OK" }
+      ])
     }
-    
+
   }
 
   function hideKeyboard() {

@@ -7,98 +7,98 @@ import DropDown from "../utilities/dropdown";
 
 export default function AppAdressPay({ navigation }) {
 
-  const [precioDefault,setPrecioDefault]=useState(200);
+  const [precioDefault, setPrecioDefault] = useState(200);
   const [precio, setPrecio] = useState(precioDefault);
   const [monto, setMonto] = useState(0);
   const [cambio, setCambio] = useState(0);
   const [explicitAddress, setExplicitAddress] = useState('');
 
-  const [zoneSelected, setZoneSelected]=useState(false);
+  const [zoneSelected, setZoneSelected] = useState(false);
   const [imageDir, setImageDir] = useState(require('../../assets/directions/default.jpg'));
-  const [time, setTime]=useState(0);
+  const [time, setTime] = useState(0);
 
 
-  const obrajes = ()=>{
+  const obrajes = () => {
     setImageDir(require('../../assets/directions/obrajes.jpg'))
     setZoneSelected(true)
-    setPrecio(precioDefault+10)
+    setPrecio(precioDefault + 10)
     setTime(900)
   }
 
-  const calacoto = ()=>{
+  const calacoto = () => {
     setImageDir(require('../../assets/directions/calacoto.jpg'))
     setZoneSelected(true)
-    setPrecio(precioDefault+15)
+    setPrecio(precioDefault + 15)
     setTime(1800)
   }
 
-  const achumani = ()=>{
+  const achumani = () => {
     setImageDir(require('../../assets/directions/achumani.jpg'))
     setZoneSelected(true)
-    setPrecio(precioDefault+20)
+    setPrecio(precioDefault + 20)
     setTime(3600)
   }
 
-  const losPinos = ()=>{
+  const losPinos = () => {
     setImageDir(require('../../assets/directions/los_pinos.jpg'))
     setZoneSelected(true)
-    setPrecio(precioDefault+12)
+    setPrecio(precioDefault + 12)
     setTime(2700)
   }
 
-  const irpavi = ()=>{
+  const irpavi = () => {
     setImageDir(require('../../assets/directions/irpavi.jpg'))
     setZoneSelected(true)
-    setPrecio(precioDefault+20)
+    setPrecio(precioDefault + 20)
     setTime(3600)
   }
 
-  const miraflores = ()=>{
+  const miraflores = () => {
     setImageDir(require('../../assets/directions/miraflores.jpg'))
     setZoneSelected(true)
-    setPrecio(precioDefault+15)
+    setPrecio(precioDefault + 15)
     setTime(2400)
   }
 
-  const sopocachi = ()=>{
+  const sopocachi = () => {
     setImageDir(require('../../assets/directions/sopocachi.jpg'))
     setZoneSelected(true)
-    setPrecio(precioDefault+12)
+    setPrecio(precioDefault + 12)
     setTime(900)
   }
 
-  const prado = ()=>{
+  const prado = () => {
     setImageDir(require('../../assets/directions/prado.png'))
     setZoneSelected(true)
-    setPrecio(precioDefault+10)
+    setPrecio(precioDefault + 10)
     setTime(1800)
   }
 
-  const perez = ()=>{
+  const perez = () => {
     setImageDir(require('../../assets/directions/perez.jpg'))
     setZoneSelected(true)
-    setPrecio(precioDefault+15)
+    setPrecio(precioDefault + 15)
     setTime(2400)
   }
 
-  const sanPedro = ()=>{
+  const sanPedro = () => {
     setImageDir(require('../../assets/directions/san_pedro.jpg'))
     setZoneSelected(true)
-    setPrecio(precioDefault+15)
+    setPrecio(precioDefault + 15)
     setTime(2700)
   }
 
-  const sanAntonio = ()=>{
+  const sanAntonio = () => {
     setImageDir(require('../../assets/directions/san_antonio.jpg'))
     setZoneSelected(true)
-    setPrecio(precioDefault+18)
+    setPrecio(precioDefault + 18)
     setTime(3600)
   }
 
-  const tembladerani = ()=>{
+  const tembladerani = () => {
     setImageDir(require('../../assets/directions/tembladerani.png'))
     setZoneSelected(true)
-    setPrecio(precioDefault+20)
+    setPrecio(precioDefault + 20)
     setTime(3600)
   }
 
@@ -116,7 +116,7 @@ export default function AppAdressPay({ navigation }) {
   }
 
   const gotoCountDown = () => {
-    navigation.navigate('OnTheGo',{deliveryTime:time})
+    navigation.navigate('OnTheGo', { deliveryTime: time })
   }
 
   return (
@@ -140,23 +140,19 @@ export default function AppAdressPay({ navigation }) {
 
           {/* insert DropDown component Here! */}
           <DropDown
-          f1={obrajes}
-          f2={calacoto}
-          f3={achumani}
-          f4={losPinos}
-          f5={irpavi}
-          f6={miraflores}
-          f7={sopocachi}
-          f8={prado}
-          f9={perez}
-          f10={sanPedro}
-          f11={sanAntonio}
-          f12={tembladerani}
+            f1={obrajes}
+            f2={calacoto}
+            f3={achumani}
+            f4={losPinos}
+            f5={irpavi}
+            f6={miraflores}
+            f7={sopocachi}
+            f8={prado}
+            f9={perez}
+            f10={sanPedro}
+            f11={sanAntonio}
+            f12={tembladerani}
           />
-
-
-
-          
 
           <Image
             style={stylesAdressPay.imageContainer}
@@ -164,8 +160,8 @@ export default function AppAdressPay({ navigation }) {
 
           <Text
             style={stylesAdressPay.disclaimer}>
-              El precio final incluye el costo del envio, el cual puede variar dependiendo la zona seleccionada.
-            </Text>
+            El precio final incluye el costo del envio, el cual puede variar dependiendo la zona seleccionada.
+          </Text>
 
 
         </View>
@@ -215,7 +211,7 @@ export default function AppAdressPay({ navigation }) {
               flexDirection: "row", justifyContent: "center"
             }}>
               <View style={{
-                backgroundColor: "#594b4b", width: 184, height: 79, borderRadius: 10, justifyContent: "center", alignItems: "center", marginLeft: 70, marginBottom: 20, 
+                backgroundColor: "#594b4b", width: 184, height: 79, borderRadius: 10, justifyContent: "center", alignItems: "center", marginLeft: 70, marginBottom: 20,
               }}>
                 <Text style={stylesAdressPay.subtitle4}>{cambio}</Text>
               </View>
@@ -278,8 +274,8 @@ const stylesAdressPay = StyleSheet.create({
     textAlign: 'center',
     fontWeight: "bold",
     color: "#fff",
-    borderWidth:1,
-    borderColor:'#c1c1c1'
+    borderWidth: 1,
+    borderColor: '#c1c1c1'
   },
   subtitle2: {
     fontSize: 27,
@@ -315,7 +311,7 @@ const stylesAdressPay = StyleSheet.create({
     height: 391,
     borderRadius: 8,
     margin: 35,
-    backgroundColor:'#000'
+    backgroundColor: '#000'
   },
   selectZone: {
     backgroundColor: '#594b4b',
@@ -327,11 +323,11 @@ const stylesAdressPay = StyleSheet.create({
 
     alignItems: 'center'
   },
-  disclaimer:{
-    fontSize:18,
-    color:'#c1c1c1',
-    fontWeight:400,
-    paddingLeft:40
+  disclaimer: {
+    fontSize: 18,
+    color: '#c1c1c1',
+    fontWeight: 400,
+    paddingLeft: 40
   },
   hintText: {
     fontSize: 20,
