@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput, StatusBar, FlatList, RefreshControl, ScrollView, Pressable, Keyboard, TouchableWithoutFeedback } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput, StatusBar, FlatList, RefreshControl, ScrollView, Pressable, Keyboard, TouchableWithoutFeedback, Alert } from "react-native";
 import React, { useState } from 'react';
 
 
@@ -16,7 +16,14 @@ export default function MainMenu({ navigation }) {
     updatedFoods[index].cant += 1;
     setFoods(updatedFoods);
     setTotal(total + precio)
-    //setTextTotal('total: '+total+' Bs.')
+  }
+
+  function buttonplus2(index, precio) {
+    const updatedFoods = [...drinks];
+    updatedFoods[index].cant += 1;
+    setDrinks(updatedFoods);
+    setTotal(total + precio)
+    
   }
 
   function buttonminus(index, precio) {
@@ -26,11 +33,28 @@ export default function MainMenu({ navigation }) {
       setFoods(updatedFoods);
     }
     setTotal(total - precio)
-    //setTextTotal('total: '+total+' Bs.')
+
+  }
+
+  function buttonminus2(index, precio) {
+    const updatedFoods = [...drinks];
+    if (updatedFoods[index].cant > 0) {
+      updatedFoods[index].cant -= 1;
+      setDrinks(updatedFoods);
+    }
+    setTotal(total - precio)
+
   }
 
   const gotoAdressPay = () => {
-    navigation.navigate('AdressPay')
+    if(total!==0){
+      navigation.navigate('AdressPay',{price:total})
+    }else{
+      Alert.alert('ITEMS INSUFICIENTES', 'añada algun elemento a su compra para seguir!', [
+        { text: "OK" }
+      ])
+    }
+    
   }
 
 
@@ -143,7 +167,51 @@ export default function MainMenu({ navigation }) {
           )}
         />
 
-        <Text style={stylesMain.section}>Comida.</Text>
+        <Text style={stylesMain.section}>Bebidas.</Text>
+        <FlatList
+
+          scrollEnabled={'false'}
+          numColumns={3}
+          keyExtractor={item => item.name}
+          data={drinks}
+          justifyContent={"center"}
+          alignItems={"center"}
+          renderItem={({ item,index }) => (
+            <View style={stylesMain.foodContainer}>
+              <Image
+                style={stylesMain.imageContainer}
+                source={item.image}
+              />
+              <View>
+                <View style={{ flexDirection: "column", justifyContent: "center", paddingTop: 0, height: 76, }}>
+                  <Text style={stylesMain.titleItem}>{item.name} </Text>
+                </View>
+                <View style={{ flexDirection: "row", alignItems: "flex-start", flex: 1 }}>
+                  <View style={{ width: 70 }}>
+                    <Text style={stylesMain.priceItem}>{item.price} Bs.</Text>
+                  </View>
+
+                  <View style={{ flexDirection: 'row-reverse', justifyContent: 'flex-start', alignItems: 'flex-end', height: 80, width: 165, padding: 5 }}>
+                    <AntDesign name="pluscircleo" size={34} color="#fff" margin={5}
+                      onPress={() => buttonplus2(index, item.price)
+                      } />
+                    {item.cant !== 0 && (
+                      <>
+                        <Text style={stylesMain.intem}>{item.cant}</Text>
+                        <AntDesign name="minuscircleo" size={34} color="#fff" margin={5}
+                          onPress={() => buttonminus2(index, item.price)
+                          }></AntDesign>
+                      </>
+                    )}
+                  </View>
+                </View>
+              </View>
+            </View>
+
+          )}
+        />
+
+
         {/* <FoodList
           selectList={foods}
           function1={() => buttonplus(item.cant, item.price)}
