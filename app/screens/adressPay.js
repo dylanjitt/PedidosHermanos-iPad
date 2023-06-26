@@ -1,8 +1,6 @@
-import { StyleSheet, Text, View, Button, SectionList, Image, TouchableOpacity, TextInput, StatusBar, Keyboard, TouchableWithoutFeedback, Alert } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput, StatusBar, Keyboard, TouchableWithoutFeedback, Alert } from "react-native";
 import React, { useState } from 'react';
 
-import Ionicons from '@expo/vector-icons/Ionicons';
-import { AntDesign } from '@expo/vector-icons';
 import DropDown from "../utilities/dropdown";
 
 export default function AppAdressPay({ navigation, route }) {
@@ -118,8 +116,8 @@ export default function AppAdressPay({ navigation, route }) {
   }
 
   const gotoCountDown = () => {
-     if (zoneSelected == true && explicitAddress !== null && monto !== 0) {
-      navigation.navigate('OnTheGo', { deliveryTime: time })
+     if (zoneSelected == true && explicitAddress !== '' && monto !== 0) {
+      navigation.replace('OnTheGo', { deliveryTime: time })
     } else {
       Alert.alert('INGRESE DATOS', 'faltan datos, como la dirreción de su domicilio, su zona, y el monto a pagar, ingréselos para continuar', [
         { text: "OK" }

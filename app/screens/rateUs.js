@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, Keyboard, TouchableOpacity, TextInput, StatusBar, TouchableWithoutFeedback} from "react-native";
-import React, { useState } from 'react';
+import React from 'react';
 import { FontAwesome5 } from '@expo/vector-icons';
 
 import Stars from "../utilities/stars";

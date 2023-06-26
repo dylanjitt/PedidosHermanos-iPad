@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput, StatusBar, FlatList, RefreshControl, ScrollView, Pressable, Keyboard, TouchableWithoutFeedback, Alert } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput, StatusBar, FlatList,  ScrollView,  Alert } from "react-native";
 import React, { useState } from 'react';
 
 
@@ -80,14 +80,10 @@ export default function MainMenu({ navigation }) {
     { name: 'Sprite \npersonal', price: 5, image: require('../../assets/foodsDrinks/sprite_personal.jpg'), cant: 0 }
   ])
 
-  //const [textTotal, setTextTotal]=useState('total: 0')
 
-  function hideKeyboard() {
-    Keyboard.dismiss();
-  }
+
 
   return (
-
 
     <View style={stylesMain.main2}>
       <StatusBar barStyle={'light-content'} />

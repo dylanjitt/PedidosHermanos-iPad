@@ -1,6 +1,6 @@
-import { StyleSheet, Text, View, Button, SectionList, Image, TouchableOpacity, TextInput, StatusBar, FlatList, RefreshControl, ScrollView, Pressable, Linking, Keyboard, TouchableWithoutFeedback, Alert } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput, StatusBar, Linking, Keyboard, TouchableWithoutFeedback, Alert } from "react-native";
 import React, { useState } from 'react';
-import { Link } from "expo-router";
+import AgeDropDown from "../utilities/ageDropdown";
 
 export default function CreateAccount({ navigation }) {
 
@@ -112,10 +112,8 @@ export default function CreateAccount({ navigation }) {
               alignItems: "flex-start", justifyContent: "center", flexDirection: "column"
             }}>
               <Text style={stylesCreateaccount.subtitle}>Género</Text>
-              <View style={stylesCreateaccount.minibox}>
-                <Text style={stylesCreateaccount.hintText}>seleccione</Text>
-              </View>
-
+              
+              <AgeDropDown/>
             </View>
 
           </View>

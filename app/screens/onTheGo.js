@@ -1,6 +1,5 @@
-import { StyleSheet, Text, View, Button, SectionList, Image, TouchableOpacity, TextInput, StatusBar, FlatList, RefreshControl, ScrollView, Pressable, } from "react-native";
-import React, { useState } from 'react';
-import { Link } from "expo-router";
+import { StyleSheet, Text, View, TouchableOpacity, StatusBar, } from "react-native";
+import React from 'react';
 
 import CountDown from "../utilities/countdown";
 
@@ -19,6 +18,7 @@ export default function OnTheGo({ navigation, route }) {
             <Text style={stylesOTG.title}>Tiempo de Entrega</Text>
             {/* insert coundtdown here  */}
             <View style={{ margin: 50 }}>
+
                 <CountDown
                     time={deliveryTime}
                     func={gotoRate}

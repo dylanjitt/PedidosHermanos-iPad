@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Button, SectionList, Image, TouchableOpacity, TextInput, StatusBar, FlatList, RefreshControl, ScrollView, Pressable, Keyboard, TouchableWithoutFeedback, Alert } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput, StatusBar, Keyboard, TouchableWithoutFeedback, Alert } from "react-native";
 import React, { useState } from 'react';
 
 export default function Login({ navigation, route }) {
@@ -13,7 +13,7 @@ export default function Login({ navigation, route }) {
 
   const goToMainMenu = () => {
     if (user == userName && password == passwd) {
-      navigation.navigate('MainMenu')
+      navigation.replace('MainMenu')
     } else if (user !== userName && password !== passwd) {
       Alert.alert('ERROR DE INICIO DE SESIÓN', 'El usuario y/o la contraseña ingresados no son válidos, intente nuevamente.', [
         { text: "OK" }
