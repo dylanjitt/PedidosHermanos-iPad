@@ -1,6 +1,11 @@
-# Expo Router Example
+# Pedidos Hermanos for iPad
 
-Use [`expo-router`](https://expo.github.io/router) to build native navigation using files in the `app/` directory.
+Bienvenido a la versión de pedidos Hermanos para iPad, donde obtendrás una experiencia diferenta al momento de realizar tus pedidos
+Este es el manual oficial para su instalación:
+
+## 1. Clonar Repo
+
+## 2. xd
 
 ## 🚀 How to use
 
